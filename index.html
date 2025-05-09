@@ -1,84 +1,99 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Armando Pacheco - Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="Armando Pacheco's Portfolio Website">
 </head>
 
-
 <body>
-
-
 <main>
   <div class="left-column">
-    <!---Left side content to add the actual resume text-->
     <header>
       <h1 class="curriculum-header">Curriculum Vitae</h1>
       <!--Navigation -->
       <nav>
         <ul>
-          <li>Hello</li>
-          <li>Resume</li>
-          <li>Cover Letter</li>
-          <li>Career Goals</li>
+          <li><a href="index.html" class="active">Hello</a></li>
+          <li><a href="resume_page.html">Resume</a></li>
+          <li><a href="cover_letter_page.html">Cover Letter</a></li>
+          <li><a href="career_goals_page.html">Career Goals</a></li>
         </ul>
       </nav>
     </header>
-    <!--Contact Info -->
 
-    <div class="profile-info">
-      <h1>Armando Pacheco Ortiz</h1>
-      <p>Data Analyst</p>
-      <div class="contact-details">
-        <!-- Basic Contact Info -->
-        <div class="contact-label">Phone:</div>
-        <div class="contact-value">407-274-8489</div>
-        <div class="contact-label">Email:</div>
-        <div class="contact-value">Armandopo@pm.me</div>
-        <div class="contact-label">Address:</div>
-        <div class="contact-value"> Orlando, FL</div>
+    <div class="page-content fade-content">
+      <section class="intro-section">
+        <h2 class="name-title">Armando Pacheco Ortiz</h2>
+        <p class="job-title">Data Analyst</p>
 
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-label">Phone:</div>
+            <div class="contact-value">407-274-8489</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Email:</div>
+            <div class="contact-value">Armandopo@pm.me</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-label">Address:</div>
+            <div class="contact-value">Orlando, FL</div>
+          </div>
 
-        <!-- Social Media Info -->
-        <div class="social-links">
-          <a href="#">LinkedIn</a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/armandopacheco/">LinkedIn</a>
+          </div>
+
+          <div class="see-cv">
+            <a href="resume_page.html">See full CV <span class="arrow">↓</span></a>
+          </div>
         </div>
-
-        <p class="see-cv"><a href="https://www.linkedin.com/in/armandopacheco/">See full CV ↓</a></p>
-      </div>
+      </section>
     </div>
 
+    <footer>
+      <p>Contact: <strong>407-274-8489</strong> | <a href="mailto:Armandopo@pm.me">Armandopo@pm.me</a> | Orlando, FL</p>
+      <p>&copy; 2025 Armando Pacheco Ortiz. All rights reserved.</p>
+    </footer>
   </div>
-
 
   <div class="right-column">
-    <!---Right side content to add my image. This one I need to keep static-->
     <img src="img/profile.jpg" alt="profile picture">
   </div>
-
 </main>
-<!-- Add your site or application content here -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only apply the effect if we're navigating to a different page
+        const targetUrl = this.getAttribute('href');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-<script src="js/app.js"></script>
+        // Don't animate if we're already on the page
+        if (targetUrl === currentPage) {
+          return;
+        }
 
+        // Prevent default navigation
+        e.preventDefault();
+
+        // Find the content container and add fade-out class
+        const contentContainer = document.querySelector('.fade-content');
+        contentContainer.style.opacity = '0';
+
+        // Navigate after fade completes
+        setTimeout(function() {
+          window.location.href = targetUrl;
+        }, 300);
+      });
+    });
+  });
+</script>
 </body>
-
 </html>
+

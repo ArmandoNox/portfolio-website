@@ -2,9 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Armando Pacheco - Career Goals</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<main>
+  <div class="left-column">
+    <header>
+      <h1 class="curriculum-header">Career Goals</h1>
+      <!--Navigation -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Hello</a></li>
+          <li><a href="resume_page.html">Resume</a></li>
+          <li><a href="cover_letter_page.html">Cover Letter</a></li>
+          <li><a href="career_goals_page.html" class="active">Career Goals</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="page-content fade-content">
+      <section class="career-goals-content">
+        <h2 class="section-title">Professional Aspirations</h2>
+        <div class="section-divider"></div>
+
+        <p>As I continue to grow in my professional journey, I have set several key career goals:</p>
+
+        <div class="media-container">
+          <img src="img/profile.jpg" alt="Armando Pacheco professional headshot" width="300">
+
+          <div class="audio-section">
+            <h3>Listen to my career philosophy:</h3>
+            <audio controls>
+              <source src="media/career_philosophy.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+          <div class="video-section">
+            <h3>Watch my skill showcase:</h3>
+            <video width="400" controls>
+              <source src="media/skills_showcase.mp4" type="video/mp4">
+              Your browser does not support the video element.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-form-section">
+        <h3>Contact Me</h3>
+        <!-- Important: Adding onsubmit="return false;" to prevent actual form submission -->
+        <form action="https://wp.zybooks.com/form-viewer.php" method="POST" onsubmit="return false;">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <p>Best Contact Time:</p>
+            <input type="radio" id="contactAM" name="contactTime" value="am">
+            <label for="contactAM">a.m.</label>
+
+            <input type="radio" id="contactPM" name="contactTime" value="pm">
+            <label for="contactPM">p.m.</label>
+
+            <input type="radio" id="contactAnytime" name="contactTime" value="anytime" checked>
+            <label for="contactAnytime">anytime</label>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMethod">Preferred Contact Method:</label>
+            <select id="contactMethod" name="contactMethod">
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="text">Text</option>
+            </select>
+          </div>
+
+          <button type="button" id="submitBtn">Submit</button>
+        </form>
+      </section>
+    </div>
+
+    <footer>
+      <p>Contact: <strong>407-274-8489</strong> | <a href="mailto:Armandopo@pm.me">Armandopo@pm.me</a> | Orlando, FL</p>
+      <p>&copy; 2025 Armando Pacheco Ortiz. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <div class="right-column">
+    <img src="img/profile.jpg" alt="profile picture">
+  </div>
+</main>
+
+<script>
+  // JavaScript for navigation
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle normal navigation
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only apply the effect if we're navigating to a different page
+        const targetUrl = this.getAttribute('href');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+        // Don't animate if we're already on the page
+        if (targetUrl === currentPage) {
+          return;
+        }
+
+        // Prevent default navigation
+        e.preventDefault();
+
+        // Find the content container and fade out
+        const contentContainer = document.querySelector('.fade-content');
+        contentContainer.style.opacity = '0';
+
+        // Navigate after fade completes
+        setTimeout(function() {
+          window.location.href = targetUrl;
+        }, 300);
+      });
+    });
+
+    // Handle form submission
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        // Show a confirmation message instead of submitting the form
+        alert('Form submitted successfully! (For demonstration purposes only)');
+      });
+    }
+
+    // Log to console for debugging
+    console.log("Career Goals page loaded successfully. Navigation is active.");
+  });
+</script>
 </body>
 </html>

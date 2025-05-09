@@ -2,9 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Armando Pacheco - Cover Letter</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<main>
+  <div class="left-column">
+    <header>
+      <h1 class="curriculum-header">Cover Letter</h1>
+      <!--Navigation -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Hello</a></li>
+          <li><a href="resume_page.html">Resume</a></li>
+          <li><a href="cover_letter_page.html" class="active">Cover Letter</a></li>
+          <li><a href="career_goals_page.html">Career Goals</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="page-content fade-content">
+      <article class="cover-letter">
+        <span class="date">May 9, 2025</span>
+
+        <p>Dear <strong>Hiring Manager</strong>,</p>
+
+        <p>I am writing to express my interest in the <em>Senior Data Analyst</em> position at your company. With my background in data analysis using Snowflake SQL and my experience in web development, I believe I would be a valuable addition to your team.</p>
+
+        <p>Throughout my career, I have <mark>consistently demonstrated</mark> the ability to translate complex data into actionable insights that drive business decisions. My technical skills combined with strong analytical thinking allow me to approach problems from multiple angles and find innovative solutions.</p>
+
+        <p>In my current role at ABC Analytics, I have successfully led projects that resulted in a 30% improvement in decision-making processes through the implementation of comprehensive dashboard solutions. I am particularly proud of my ability to communicate technical concepts to non-technical stakeholders, ensuring that data insights are accessible to everyone in the organization.</p>
+
+        <hr>
+
+        <p>I am excited about the opportunity to bring my unique blend of skills to your company and contribute to your continued success.</p>
+
+        <p><strong>Sincerely</strong>,<br>
+          <em>Armando Pacheco Ortiz</em></p>
+      </article>
+    </div>
+
+    <footer>
+      <p>Contact: <strong>407-274-8489</strong> | <a href="mailto:Armandopo@pm.me">Armandopo@pm.me</a> | Orlando, FL</p>
+      <p>&copy; 2025 Armando Pacheco Ortiz. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <div class="right-column">
+    <img src="img/profile.jpg" alt="profile picture">
+  </div>
+</main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only apply the effect if we're navigating to a different page
+        const targetUrl = this.getAttribute('href');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+        // Don't animate if we're already on the page
+        if (targetUrl === currentPage) {
+          return;
+        }
+
+        // Prevent default navigation
+        e.preventDefault();
+
+        // Find the content container and add fade-out class
+        const contentContainer = document.querySelector('.fade-content');
+        contentContainer.style.opacity = '0';
+
+        // Navigate after fade completes
+        setTimeout(function() {
+          window.location.href = targetUrl;
+        }, 300);
+      });
+    });
+  });
+</script>
 </body>
 </html>

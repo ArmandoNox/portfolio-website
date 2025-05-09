@@ -1,379 +1,435 @@
-/* ==========================================================================
-   Base styles
-   ========================================================================== */
-
+/* Base styles */
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
 }
 
-nav {
-  align-items: center;
-  justify-content: center;
-
-}
-
-nav li {
+body {
+  margin: 0;
+  padding: 0;
   font-family: 'Garamond', serif;
-  margin-right: 15px;
-  font-weight: bold;
-  display: inline-block;
-  list-style-type: none;
 }
 
-nav li:hover {
-  cursor: pointer;
-  color: cadetblue;
-}
-
-.curriculum-header {
-  font-family: 'Garamond', serif;
+/* Main layout */
+main {
   display: flex;
-  font-weight: normal;
+  height: 100vh;
 }
 
-
+/* Left column styles */
 .left-column {
   width: 50%;
   overflow-y: auto;
-
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
+/* Right column styles */
 .right-column {
   position: fixed;
   display: flex;
   width: 50%;
   height: 100%;
-  background-color: cadetblue;
+  background-color: #8aa99b;  /* Sage green color from examples */
   right: 0;
   justify-content: center;
   align-items: center;
   top: 0;
 }
 
-.right-column img{
- max-width: 70%;
- max-height: 70%;
+.right-column img {
+  max-width: 70%;
+  max-height: 70%;
   object-fit: cover;
-  clip-path: inset(0 40% 0 0);
-  display: block;
-  margin: 0 auto;
 }
 
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 250px;
-}
-
-.profile-info h1 {
-  font-family: 'Garamond', serif;
-  font-weight: bold;
-  font-size: 70px;
-  margin: 0;
-}
-
-.profile-info p {
-  font-family: 'Garamond', serif;
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 150px; /* Space before contact details */
-}
-
-.contact-details {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 10px 5px;
-  font-family: 'Garamond', sans-serif;
-  font-size: 25px;
-  width: auto;
-
-}
-
-.contact-label {
-  text-align: left;
-  font-weight: bold;
-}
-
-.contact-value {
-  text-align: left;
-}
-
-.social-links {
-  grid-column: span 2;
-  margin-top: 20px;
-  text-align: left;
-
-}
-
-.social-links a {
-  color: black;
-}
-
-
-
-
-.see-cv {
-  grid-column: span 2;
-  text-align: left;
-  padding-top: 150px;
-  font-size: 30px;
-
-}
-
-.see-cv a {
-  color: black;
- text-decoration: none;
-  font-size: 30px;
-
-}
-
-ul {
-  display: flex;
-  vertical-align: middle;
-
-}
-
-
+/* Header and navigation */
 header {
-  padding-left: 34px;
-  padding-right: 34px;
-
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.curriculum-header {
+  font-family: 'Garamond', serif;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-/*
- * A better looking default horizontal rule
- */
+nav li {
+  font-family: 'Garamond', serif;
+  margin-right: 15px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #222;
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+nav li a:hover {
+  color: #8aa99b;
+}
+
+nav li a.active {
+  border-bottom: 1px solid #8aa99b;
+  color: #8aa99b;
+}
+
+/* Fade effect for content */
+.fade-content {
+  animation: fadeIn 0.8s ease-in-out;
+  padding: 20px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Introduction section */
+.intro-section {
+  padding-top: 60px;
+}
+
+.name-title {
+  font-family: 'Garamond', serif;
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.job-title {
+  font-family: 'Garamond', serif;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+/* Contact details */
+.contact-details {
+  margin-bottom: 40px;
+}
+
+.contact-row {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contact-label {
+  font-weight: bold;
+  width: 80px;
+}
+
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.see-cv {
+  margin-top: 50px;
+}
+
+.see-cv a {
+  color: #222;
+  text-decoration: none;
+  font-size: 24px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.see-cv a:hover {
+  transform: translateY(5px);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.see-cv a:hover .arrow {
+  transform: translateY(3px);
+}
+
+/* Resume page styles */
+.section-title {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.section-divider {
+  width: 60%;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  background-color: rgba(138, 169, 155, 0.2);
+  padding: 0 3px;
+}
+
+/* Skills list */
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.skills-list li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.skills-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8aa99b;
+}
+
+/* Work experience */
+.job-entry {
+  margin-bottom: 30px;
+}
+
+.job-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.job-company {
+  font-style: italic;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.job-location {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Education table */
+.table-title {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 18px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Cover letter styles */
+.cover-letter {
+  padding-top: 40px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.date {
+  display: block;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.cover-letter p {
+  margin-bottom: 20px;
+}
+
+mark {
+  background-color: rgba(138, 169, 155, 0.2);
+  padding: 0 3px;
+}
 
 hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  margin: 1em 0;
+  margin: 30px 0;
   padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+/* Career goals page */
+.career-goals-content {
+  padding-top: 40px;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+.media-container {
+  margin: 40px 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+.media-container img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 30px;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.audio-section, .video-section {
+  margin-bottom: 30px;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+audio, video {
+  width: 100%;
+  margin-top: 10px;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+/* Form styling */
+form {
+  margin-top: 30px;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.form-group {
+  margin-bottom: 20px;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
-.clearfix::after {
-  clear: both;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Garamond', serif;
+  font-size: 16px;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+input[type="radio"] {
+  margin-right: 8px;
 }
 
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+input[type="radio"] + label {
+  display: inline;
+  margin-right: 20px;
+  font-weight: normal;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+button[type="submit"] {
+  background-color: #8aa99b;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Garamond', serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
 
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+button[type="submit"]:hover {
+  background-color: #738e80;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  font-size: 16px;
+}
+
+/* Current date styling */
+#current-date {
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 992px) {
+  main {
+    flex-direction: column;
   }
 
-  a,
-  a:visited {
-    text-decoration: underline;
+  .left-column {
+    width: 100%;
+    padding: 0 20px;
   }
 
-  a[href]::after {
-    content: " (" attr(href) ")";
+  .right-column {
+    position: relative;
+    width: 100%;
+    height: 300px;
   }
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
+  .name-title {
+    font-size: 48px;
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
+  .job-title {
+    font-size: 30px;
   }
 }
-
