@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><link rel="stylesheet" href="css/style.css"/><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Armando Pacheco - Portfolio</title><link rel="stylesheet" href="css/style.css"><meta name="description" content="Armando Pacheco's Portfolio Website"><script defer="defer" src="./js/app.js"></script></head><body><main><div class="left-column"><header><h1 class="curriculum-header">Curriculum Vitae</h1><nav><ul><li><a href="home.html" class="active">Hello</a></li><li><a href="resume_page.html">Resume</a></li><li><a href="cover_letter_page.html">Cover Letter</a></li><li><a href="career_goals_page.html">Career Goals</a></li></ul></nav></header><div class="page-content fade-content"><section class="intro-section"><h2 class="name-title">Armando Pacheco Ortiz</h2><p class="job-title">Data Analyst</p><div class="contact-details"><div class="contact-row"><div class="contact-label">Phone:</div><div class="contact-value">407-274-8489</div></div><div class="contact-row"><div class="contact-label">Email:</div><div class="contact-value">Armandopo@pm.me</div></div><div class="contact-row"><div class="contact-label">Address:</div><div class="contact-value">Orlando, FL</div></div><div class="social-links"><a href="https://www.linkedin.com/in/armandopacheco/">LinkedIn</a></div><div class="see-cv"><a href="resume_page.html">See full CV <span class="arrow">↓</span></a></div></div></section></div></div><div class="right-column"><img src="img/profile.jpg" alt="profile picture"></div></main><script>document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    console.log("Home page loaded. Navigation active.");
+
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetUrl = this.getAttribute('href');
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+
+        if (targetUrl === currentPage) {
+          return;
+        }
+
+        e.preventDefault();
+
+        const contentContainer = document.querySelector('.fade-content');
+        contentContainer.style.opacity = '0';
+
+        setTimeout(function() {
+          window.location.href = targetUrl;
+        }, 300);
+      });
+    });
+  });</script></body></html>
