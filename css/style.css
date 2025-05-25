@@ -1,37 +1,35 @@
 /* Base styles */
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-body {
+html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
-  font-family: 'Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* Main layout */
 main {
+  flex: 1;
   display: flex;
-  height: 100vh;
-}
+  overflow: hidden; }
 
 /* Left column styles */
 .left-column {
-  width: 50%;
-  overflow-y: auto;
-  padding: 0 40px;
+  width: 80%;
+  padding: 0 200px 0 40px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
+
+
 
 /* Right column styles */
 .right-column {
   position: fixed;
   display: flex;
-  width: 50%;
+  width: 20%;
   height: 100%;
-  background-color: #8aa99b;  /* Sage green color from examples */
+  background-color: #8aa99b;
   right: 0;
   justify-content: center;
   align-items: center;
@@ -39,9 +37,14 @@ main {
 }
 
 .right-column img {
-  max-width: 70%;
-  max-height: 70%;
-  object-fit: cover;
+  width: 700px;
+  position: absolute;
+  right: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  clip-path: inset(0 40% 0 0);
+  border-radius: 24px;
 }
 
 /* Header and navigation */
@@ -56,7 +59,7 @@ header {
 .curriculum-header {
   font-family: 'Garamond', serif;
   font-weight: normal;
-  font-size: 24px;
+  font-size: clamp(24px, 30px, 40px);
   margin: 0;
 }
 
@@ -71,6 +74,8 @@ nav li {
   font-family: 'Garamond', serif;
   margin-right: 15px;
   font-weight: normal;
+ font-size: clamp(18px, 24px, 30px);
+
   display: inline-block;
 }
 
@@ -106,16 +111,14 @@ nav li a.active {
 }
 
 /* Introduction section */
-.intro-section {
-  padding-top: 60px;
-}
+
 
 .name-title {
   font-family: 'Garamond', serif;
-  font-size: 70px;
+  font-size: clamp(40px, 46px, 70px);
   font-weight: bold;
-  margin: 0;
-  margin-bottom: 10px;
+ padding-top:  10px;
+  margin-bottom: 0;
 }
 
 .job-title {
@@ -139,32 +142,51 @@ nav li a.active {
 .contact-label {
   font-weight: bold;
   width: 80px;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.contact-value {
+  font-size: 24px;
 }
 
 .social-links {
   margin-top: 30px;
+  text-decoration: underline;
+  padding-top: 5px;
+
 }
 
 .social-links a {
   color: #222;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
+
 }
 
+.social-links a:hover {
+  color: #8aa99b;
+
+}
 .see-cv {
-  margin-top: 50px;
+  margin-top: 140px;
+padding-right: 0;
+  margin-right: 0;
+  text-align: end;
 }
 
 .see-cv a {
   color: #222;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 34px;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
 .see-cv a:hover {
-  transform: translateY(5px);
+  transform: translateY(10px);
+  color: #8aa99b;
+
 }
 
 .arrow {
@@ -235,11 +257,6 @@ nav li a.active {
   font-size: 18px;
 }
 
-.job-title {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
 
 .job-company {
   font-style: italic;
@@ -395,9 +412,10 @@ button[type="submit"]:hover {
 /* Footer */
 footer {
   margin-top: 60px;
-  padding: 20px 0;
+  padding-bottom: 0;
   border-top: 1px solid #eee;
   font-size: 16px;
+  padding-left: 2%;
 }
 
 /* Current date styling */
@@ -429,7 +447,5 @@ footer {
     font-size: 48px;
   }
 
-  .job-title {
-    font-size: 30px;
-  }
+
 }
