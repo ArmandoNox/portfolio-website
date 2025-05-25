@@ -13,7 +13,7 @@
       <!--Navigation -->
       <nav>
         <ul>
-          <li><a href="index.html">Hello</a></li>
+          <li><a href="home.html">Hello</a></li>
           <li><a href="resume_page.html">Resume</a></li>
           <li><a href="cover_letter_page.html">Cover Letter</a></li>
           <li><a href="career_goals_page.html" class="active">Career Goals</a></li>
@@ -52,7 +52,7 @@
       <section class="contact-form-section">
         <h3>Contact Me</h3>
         <!-- Important: Adding onsubmit="return false;" to prevent actual form submission -->
-        <form action="https://wp.zybooks.com/form-viewer.php" method="POST" onsubmit="return false;">
+        <form action="https://wp.zybooks.com/form-viewer.php" method="POST" >
           <div class="form-group">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
@@ -86,13 +86,13 @@
           <div class="form-group">
             <p>Best Contact Time:</p>
             <input type="radio" id="contactAM" name="contactTime" value="am">
-            <label for="contactAM">a.m.</label>
+            <label for="contactAM">A.M</label>
 
             <input type="radio" id="contactPM" name="contactTime" value="pm">
-            <label for="contactPM">p.m.</label>
+            <label for="contactPM">P.M</label>
 
             <input type="radio" id="contactAnytime" name="contactTime" value="anytime" checked>
-            <label for="contactAnytime">anytime</label>
+            <label for="contactAnytime">Anytime</label>
           </div>
 
           <div class="form-group">
@@ -104,7 +104,7 @@
             </select>
           </div>
 
-          <button type="button" id="submitBtn">Submit</button>
+          <button type="submit" id="submitBtn">Submit</button>
         </form>
       </section>
     </div>
@@ -121,45 +121,35 @@
 </main>
 
 <script>
-  // JavaScript for navigation
   document.addEventListener('DOMContentLoaded', function() {
-    // Handle normal navigation
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only apply the effect if we're navigating to a different page
         const targetUrl = this.getAttribute('href');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
 
-        // Don't animate if we're already on the page
         if (targetUrl === currentPage) {
           return;
         }
 
-        // Prevent default navigation
         e.preventDefault();
 
-        // Find the content container and fade out
         const contentContainer = document.querySelector('.fade-content');
         contentContainer.style.opacity = '0';
 
-        // Navigate after fade completes
         setTimeout(function() {
           window.location.href = targetUrl;
         }, 300);
       });
     });
 
-    // Handle form submission
     const submitBtn = document.getElementById('submitBtn');
     if (submitBtn) {
       submitBtn.addEventListener('click', function() {
-        // Show a confirmation message instead of submitting the form
         alert('Form submitted successfully! (For demonstration purposes only)');
       });
     }
 
-    // Log to console for debugging
     console.log("Career Goals page loaded successfully. Navigation is active.");
   });
 </script>

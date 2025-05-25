@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Armando Pacheco - Portfolio</title>
@@ -16,7 +17,7 @@
       <!--Navigation -->
       <nav>
         <ul>
-          <li><a href="index.html" class="active">Hello</a></li>
+          <li><a href="home.html" class="active">Hello</a></li>
           <li><a href="resume_page.html">Resume</a></li>
           <li><a href="cover_letter_page.html">Cover Letter</a></li>
           <li><a href="career_goals_page.html">Career Goals</a></li>
@@ -64,27 +65,25 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Add click handlers to navigation links
     const navLinks = document.querySelectorAll('nav a');
+
+    console.log("Home page loaded. Navigation active.");
+
+
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only apply the effect if we're navigating to a different page
         const targetUrl = this.getAttribute('href');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
 
-        // Don't animate if we're already on the page
         if (targetUrl === currentPage) {
           return;
         }
 
-        // Prevent default navigation
         e.preventDefault();
 
-        // Find the content container and add fade-out class
         const contentContainer = document.querySelector('.fade-content');
         contentContainer.style.opacity = '0';
 
-        // Navigate after fade completes
         setTimeout(function() {
           window.location.href = targetUrl;
         }, 300);

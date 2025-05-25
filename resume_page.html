@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <meta charset="UTF-8">
   <title>Armando Pacheco - Resume</title>
   <link rel="stylesheet" href="css/style.css">
@@ -13,7 +15,7 @@
       <!--Navigation -->
       <nav>
         <ul>
-          <li><a href="index.html">Hello</a></li>
+          <li><a href="home.html">Hello</a></li>
           <li><a href="resume_page.html" class="active">Resume</a></li>
           <li><a href="cover_letter_page.html">Cover Letter</a></li>
           <li><a href="career_goals_page.html">Career Goals</a></li>
@@ -23,17 +25,23 @@
 
     <div class="page-content fade-content">
       <section class="resume-section">
+        <div class="date" id="current-date"></div>
+
+        <div class="cv-row">
+          <span>See full CV on  </span>
+          <div class="social-links"><a href="https://www.linkedin.com/in/armandopacheco/"> LinkedIn</a></div>
+        </div>
         <h2 class="section-title">A B O U T</h2>
         <div class="section-divider"></div>
 
         <p class="about-text">
-          Dedicated <span class="highlight">Data Analyst</span> with extensive experience in Snowflake SQL and JavaScript, and Flutter.
-          Currently enhancing skills in React development and Flutter mobile applications.
-          <strong>Passionate about transforming</strong> complex data into actionable insights and creating
-          responsive web applications.
+          Dedicated Data Analyst with extensive experience in Snowflake SQL, JavaScript and Flutter.
+          Currently improving my skills in React development and working on Flutter mobile applications.
+          <strong>Passionate about <span>transforming complex data into actionable insights</span> and creating
+          responsive applications that make an impact.</strong>
         </p>
 
-        <h2 class="section-title">S K I L L S &nbsp; & &nbsp; E X P E R T I S E</h2>
+        <h2 class="section-title">S K I L L S  &  E X P E R T I S E</h2>
         <div class="section-divider"></div>
 
         <ul class="skills-list">
@@ -48,7 +56,7 @@
           </li>
         </ul>
 
-        <h2 class="section-title">W O R K &nbsp; E X P E R I E N C E</h2>
+        <h2 class="section-title">W O R K    E X P E R I E N C E</h2>
         <div class="section-divider"></div>
 
         <article class="job-entry">
@@ -56,15 +64,31 @@
           <div class="job-title"> Data Analyst</div>
           <div class="job-company">Travel & Leisure</div>
           <div class="job-location">Orlando, FL</div>
-          <p>Lead data analysis projects using Snowflake SQL to extract business insights. Developed dashboard solutions that improved decision-making processes by 30%.</p>
+          <p>- Analyzed complex timeshare usage patterns using Snowflake SQL, identifying anomalies that increased property availability by 15%<br>
+            - Designed and implemented interactive Power BI dashboards to visualize key performance metrics for executive decision-making<br>
+            - Developed automated reporting solutions using Javascript and Power Apps, reducing manual reporting time by 30%<br>
+            - Optimized data extraction and transformation processes in Snowflake, improving query performance by 25%<br>
+            - Collaborated with cross-functional teams to implement data-driven strategies that improved member satisfaction scores by 12%<br><br>
+            <strong>Skills:</strong><em> SQL · Statistical Data Analysis · Exploratory Data Analysis · Snowflake SQL · Microsoft Power BI · Extract, Transform, Load (ETL) · JavaScript · Microsoft Power Apps</em>
+
+
+          </p>
+
         </article>
 
         <article class="job-entry">
-          <div class="job-date">2019 - 2021</div>
-          <div class="job-title">Junior Web Developer</div>
-          <div class="job-company">XYZ Tech Solutions</div>
+          <div class="job-date">2019 - Present</div>
+          <div class="job-title">Junior Node JS & Flutter App Developer </div>
+          <div class="job-company">Freelance</div>
           <div class="job-location">Orlando, FL</div>
-          <p>Worked on <em>front-end development</em> projects using JavaScript and Flutter. Collaborated with design teams to implement responsive interfaces.</p>
+          <p>- Architected and developed a full-stack web application using Flutter frontend and Node.js backend, for a real estate company as a CRM platform.<br>
+            - Designed and implemented RESTful APIs and database schemas to support real-time data synchronization across web and mobile platforms<br>
+            - Created responsive UI components and custom animations in Flutter that improved user engagement metrics by 23%<br>
+            - Implemented automated testing and CI/CD pipelines, reducing deployment time by 40% and increasing code quality<br>
+            - Constantly working on personal projects to make my life easier!<br><br>
+            <strong>Skills:</strong><em> SQL · Flutter · Node.JS · REST APIs · Firebase · Git · Javascript · Dart</em>
+
+          </p>
         </article>
 
         <section class="education-section">
@@ -78,19 +102,39 @@
               <th>Year</th>
             </tr>
             <tr>
-              <td>Bachelor of Science in Computer Science</td>
-              <td>Florida State University</td>
-              <td>Tallahassee, FL</td>
-              <td>2018</td>
+              <td>Bachelor of Science in Software Engineering</td>
+              <td>Western Governor's University</td>
+              <td>Online</td>
+              <td>2025 - 2029 (Expected)</td>
             </tr>
             <tr>
-              <td>Data Science Certification</td>
-              <td>Western Governors University</td>
+              <td>Bachelor's Degree in Computer Science</td>
+              <td>Valencia College</td>
               <td>Online</td>
-              <td>2020</td>
+              <td>2017 - 2018</td>
             </tr>
+            <tr>
+              <td>American Sign Language Certificate</td>
+              <td>United Latino Students Association</td>
+              <td>Puerto Rico</td>
+              <td>2014</td>
+            </tr>
+
           </table>
         </section>
+        <h2 class="section-title">O T H E R  S K I L L S</h2>
+        <div class="section-divider"></div>
+        <ul>
+          <li class="other-skills-item"><strong>Problem Solving</strong></li>
+          <li class="other-skills-item"><strong>Critical Thinking</strong></li>
+          <li class="other-skills-item"><strong>Teamwork</strong></li>
+          <li class="other-skills-item"><strong>Decision-Making</strong></li>
+          <li class="other-skills-item"><strong>Interpersonal Skills</strong></li>
+          <li class="other-skills-item"><strong>Bilingual (Spanish/English)</strong></li>
+          <li class="other-skills-item"><strong>Attention to Detail</strong></li>
+          <li class="other-skills-item"><strong>Desire to Learn</strong></li>
+          <li class="other-skills-item"><strong>Adaptable</strong></li>
+          </ul>
       </section>
     </div>
 
@@ -108,27 +152,30 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Add click handlers to navigation links
+    console.log("Resume page loaded. Date populated and navigation active.");
+
+    const dateElem = document.getElementById('current-date')
+    if(dateElem) {
+      const today = new Date();
+      const options = {year: 'numeric', month: 'long', day: 'numeric'};
+      dateElem.textContent = 'Today\s date is: ' + today.toLocaleDateString(undefined, options);
+    }
+
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only apply the effect if we're navigating to a different page
         const targetUrl = this.getAttribute('href');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
 
-        // Don't animate if we're already on the page
         if (targetUrl === currentPage) {
           return;
         }
 
-        // Prevent default navigation
         e.preventDefault();
 
-        // Find the content container and add fade-out class
         const contentContainer = document.querySelector('.fade-content');
         contentContainer.style.opacity = '0';
 
-        // Navigate after fade completes
         setTimeout(function() {
           window.location.href = targetUrl;
         }, 300);

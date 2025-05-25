@@ -110,9 +110,6 @@ nav li a.active {
   to { opacity: 1; }
 }
 
-/* Introduction section */
-
-
 .name-title {
   font-family: 'Garamond', serif;
   font-size: clamp(40px, 46px, 70px);
@@ -125,16 +122,19 @@ nav li a.active {
   font-family: 'Garamond', serif;
   font-size: 40px;
   margin-top: 0;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
-/* Contact details */
 .contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
 }
 
 .contact-row {
   display: flex;
+  justify-content: center;
   margin-bottom: 10px;
   font-size: 18px;
 }
@@ -170,9 +170,9 @@ nav li a.active {
 }
 .see-cv {
   margin-top: 140px;
-padding-right: 0;
+  padding-right: 0;
   margin-right: 0;
-  text-align: end;
+  text-align: center;
 }
 
 .see-cv a {
@@ -205,6 +205,7 @@ padding-right: 0;
   margin-top: 60px;
   margin-bottom: 10px;
   font-weight: normal;
+  white-space: pre;
 }
 
 .section-divider {
@@ -448,4 +449,29 @@ footer {
   }
 
 
+}
+
+.other-skills-item {
+  padding-bottom: 10px;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.cv-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #222;
+  font-size: 24px;
+}
+
+.cv-row .social-links {
+  margin: 0 0 0 10px;
 }

@@ -10,10 +10,9 @@
   <div class="left-column">
     <header>
       <h1 class="curriculum-header">Cover Letter</h1>
-      <!--Navigation -->
       <nav>
         <ul>
-          <li><a href="index.html">Hello</a></li>
+          <li><a href="home.html">Hello</a></li>
           <li><a href="resume_page.html">Resume</a></li>
           <li><a href="cover_letter_page.html" class="active">Cover Letter</a></li>
           <li><a href="career_goals_page.html">Career Goals</a></li>
@@ -23,15 +22,19 @@
 
     <div class="page-content fade-content">
       <article class="cover-letter">
-        <span class="date">May 9, 2025</span>
+        <span class="date" id="current-date"></span>
 
         <p>Dear <strong>Hiring Manager</strong>,</p>
 
-        <p>I am writing to express my interest in the <em>Senior Data Analyst</em> position at your company. With my background in data analysis using Snowflake SQL and my experience in web development, I believe I would be a valuable addition to your team.</p>
+        <p>I am a Data Analyst with over two years of experience specializing in Snowflake SQL and statistical analysis, currently working at Travel + Leisure Co. in the timeshare industry. My passion lies in <mark>transforming complex data into actionable insights</mark> that drive meaningful business outcomes.</p>
 
-        <p>Throughout my career, I have <mark>consistently demonstrated</mark> the ability to translate complex data into actionable insights that drive business decisions. My technical skills combined with strong analytical thinking allow me to approach problems from multiple angles and find innovative solutions.</p>
+        <p>In my current role, I've successfully analyzed complex timeshare usage patterns to identify anomalies, resulting in a 15% increase in property availability. I've designed and implemented interactive Power BI dashboards that empower executive decision-making, and developed automated reporting solutions using JavaScript and Power Apps that reduced manual reporting time by 30%. Through optimization of data extraction and transformation processes in Snowflake, I've improved query performance by 25%.</p>
 
-        <p>In my current role at ABC Analytics, I have successfully led projects that resulted in a 30% improvement in decision-making processes through the implementation of comprehensive dashboard solutions. I am particularly proud of my ability to communicate technical concepts to non-technical stakeholders, ensuring that data insights are accessible to everyone in the organization.</p>
+        <p>Beyond data analysis, I bring full-stack development experience from years of personal exploration and self-driven projects. Through my curiosity and passion for technology, I've architected web applications and implemented RESTful APIs using Flutter and Node.js. This unique combination of analytical expertise and hands-on development skills allows me to approach data challenges from both technical and business perspectives.</p>
+
+        <p>I'm particularly skilled at collaborating with cross-functional teams to implement data-driven strategies, having contributed to initiatives that improved member satisfaction scores by 12%. My ability to communicate complex technical concepts to non-technical stakeholders ensures that data insights are accessible and actionable across all levels of an organization.</p>
+
+        <p>Currently expanding my skillset with HTML/CSS and React while continuing to develop projects in Flutter and JavaScript, I'm excited about opportunities to leverage my diverse technical background to create innovative data solutions that align with organizational objectives.</p>
 
         <hr>
 
@@ -53,28 +56,30 @@
   </div>
 </main>
 <script>
+
   document.addEventListener('DOMContentLoaded', function() {
-    // Add click handlers to navigation links
+    console.log("Cover letter page loaded. Date populated and navigation active.");
+
+    const dateElem = document.getElementById('current-date')
+    if(dateElem) {
+      const today = new Date();
+      const options = {year: 'numeric', month: 'long', day: 'numeric'};
+      dateElem.textContent = today.toLocaleDateString(undefined, options);
+    }
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only apply the effect if we're navigating to a different page
         const targetUrl = this.getAttribute('href');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'home.html';
 
-        // Don't animate if we're already on the page
         if (targetUrl === currentPage) {
           return;
         }
 
-        // Prevent default navigation
         e.preventDefault();
 
-        // Find the content container and add fade-out class
         const contentContainer = document.querySelector('.fade-content');
         contentContainer.style.opacity = '0';
-
-        // Navigate after fade completes
         setTimeout(function() {
           window.location.href = targetUrl;
         }, 300);
