@@ -21,28 +21,46 @@
     </header>
 
     <div class="page-content fade-content">
-      <article class="cover-letter">
-        <span class="date" id="current-date"></span>
+      <section>
+        <article class="cover-letter">
+          <span class="date" id="current-date"></span>
 
-        <p>Dear <strong>Hiring Manager</strong>,</p>
+          <p>Dear <strong>Hiring Manager</strong>,</p>
 
-        <p>I am a Data Analyst with over two years of experience specializing in Snowflake SQL and statistical analysis, currently working at Travel + Leisure Co. in the timeshare industry. My passion lies in <mark>transforming complex data into actionable insights</mark> that drive meaningful business outcomes.</p>
+          <p>I am a data analyst with over two years of experience specializing in Snowflake SQL and statistical
+            analysis. I am currently working at Travel + Leisure Co. in the timeshare industry. My passion lies in
+            <mark>creating end-user applications and websites that are not only useful but enjoyable</mark>
+            , all while transforming complex data into actionable insights that drive meaningful business outcomes.
+          </p>
+          <p>In my current role, I've successfully analyzed complex timeshare usage patterns to identify anomalies,
+            resulting in a 15% increase in property availability. I've designed and implemented interactive Power BI
+            dashboards that empower executive decision-making and developed automated reporting solutions using
+            JavaScript and Power Apps that reduced manual reporting time by 30%. Through optimizing data extraction and
+            transformation processes in Snowflake, I've improved query performance by 25%.</p>
+          <p>Beyond data analysis, I bring full-stack development experience from years of personal exploration and
+            self-driven projects. Through my curiosity and passion for technology, I've architected web applications and
+            implemented RESTful APIs using Flutter and Node.js. </p>
 
-        <p>In my current role, I've successfully analyzed complex timeshare usage patterns to identify anomalies, resulting in a 15% increase in property availability. I've designed and implemented interactive Power BI dashboards that empower executive decision-making, and developed automated reporting solutions using JavaScript and Power Apps that reduced manual reporting time by 30%. Through optimization of data extraction and transformation processes in Snowflake, I've improved query performance by 25%.</p>
+            <p>I bring together data analytics and software development
+            skills, which help me solve problems from different angles and connect the technical side with business
+            goals. I work well with various teams to build data-driven solutions—like. I'm good at breaking down technical information so everyone, whether
+            engineers or executives, can understand it to help teams make smart, data-backed decisions at every company
+            level.</p>
+          <p>Currently expanding my skillset with HTML/CSS and React while continuing to develop projects in Flutter and
+            JavaScript, I'm excited about opportunities to leverage my diverse technical background to create innovative
+            data solutions that align with organizational objectives.
+          </p>
 
-        <p>Beyond data analysis, I bring full-stack development experience from years of personal exploration and self-driven projects. Through my curiosity and passion for technology, I've architected web applications and implemented RESTful APIs using Flutter and Node.js. This unique combination of analytical expertise and hands-on development skills allows me to approach data challenges from both technical and business perspectives.</p>
 
-        <p>I'm particularly skilled at collaborating with cross-functional teams to implement data-driven strategies, having contributed to initiatives that improved member satisfaction scores by 12%. My ability to communicate complex technical concepts to non-technical stakeholders ensures that data insights are accessible and actionable across all levels of an organization.</p>
+          <hr>
 
-        <p>Currently expanding my skillset with HTML/CSS and React while continuing to develop projects in Flutter and JavaScript, I'm excited about opportunities to leverage my diverse technical background to create innovative data solutions that align with organizational objectives.</p>
+          <p>I am excited about the opportunity to bring my unique blend of skills to your company and contribute to
+            your continued success.</p>
 
-        <hr>
-
-        <p>I am excited about the opportunity to bring my unique blend of skills to your company and contribute to your continued success.</p>
-
-        <p><strong>Sincerely</strong>,<br>
-          <em>Armando Pacheco Ortiz</em></p>
-      </article>
+          <p><strong>Sincerely</strong>,<br>
+            <em>Armando Pacheco Ortiz</em></p>
+        </article>
+      </section>
     </div>
 
     <footer>
@@ -57,18 +75,18 @@
 </main>
 <script>
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     console.log("Cover letter page loaded. Date populated and navigation active.");
 
     const dateElem = document.getElementById('current-date')
-    if(dateElem) {
+    if (dateElem) {
       const today = new Date();
       const options = {year: 'numeric', month: 'long', day: 'numeric'};
       dateElem.textContent = today.toLocaleDateString(undefined, options);
     }
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         const targetUrl = this.getAttribute('href');
         const currentPage = window.location.pathname.split('/').pop() || 'home.html';
 
@@ -80,7 +98,7 @@
 
         const contentContainer = document.querySelector('.fade-content');
         contentContainer.style.opacity = '0';
-        setTimeout(function() {
+        setTimeout(function () {
           window.location.href = targetUrl;
         }, 300);
       });
